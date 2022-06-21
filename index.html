@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Population Sampling</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ernest Guevarra" />
+    <meta name="date" content="2022-06-21" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: right, bottom, title-slide
+
+.title[
+# Population Sampling
+]
+.author[
+### Ernest Guevarra
+]
+.date[
+### 21 June 2022
+]
+
+---
+
+
+
+
+
+
+## Outline
+
+* Simple sampling
+
+* Complex sampling
+
+* Spatial sampling
+
+---
+
+## Simple sampling
+
+* simple random sample
+
+* systematic sample
+
+---
+
+## Simple sampling: simple random sample
+
+* Drawing a sample of X number from a full list of members of a fixed population.
+
+.pull-left[
+Lottery
+
+![](images/sampling_lottery.png)
+]
+
+.pull-right[
+Random number table
+
+![](images/sampling_random_number_table.png)
+
+]
+
+---
+
+## Simple sampling: systematic sample
+
+* Determine a **sampling interval**
+
+$$ \text{sampling interval} ~ = ~ \left \lfloor \frac{\text{number of samples needed}}{\text{total number of population}} \right \rfloor $$
+
+* Select a random number from the series of numbers between 1 and the sampling interval. This will be the **random starting point** for the systematic selection.
+
+* Using the **random starting point** and the **sampling interval**, select the samples from a list of all members of the population starting from the random starting point position and then for every successive sampling interval position.
+
+---
+
+## Simple sample: systematic sample
+
+&lt;img src="images/sampling_systematic.png" width="463" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center, middle
+
+# Complex sample
+
+---
+
+## Complex survey design: two-stage/multi-stage random cluster sample
+
+* First stage sample - sampling of clusters
+
+    * draw a simple random sample of X clusters
+    * draw a systematic sample of X clusters
+    * draw a sample of X number of clusters selected proportional to population size
+
+* Second stage sample - within-cluster sampling
+
+    * draw a simple random sample of Y members of the selected clusters
+    * draw a systematic sample of Y members of the selected clusters
+    * draw a spatial sample of Y members of the selected clusters
+    
+---
+
+## Spatial sampling
+
+* techniques such as Centric Systematic Area Sampling (CSAS) are known to approximate a simple random sample
+
+* useful as an alternative to other sampling approaches particularly when typical sampling frames are not available
+
+---
+
+## Spatial sampling examples - CCHF project
+
+.pull-left[
+
+]
+
+.pull-right[
+![](https://github.com/ecohealthalliance/spatialsampling/raw/main/figures/step2-1.png) 
+]
+
+---
+
+## Spatial sampling examples - RVF2 project
+
+.pull-left[
+![](images/detailed_sampling_maps_livestock.png)
+]
+
+.pull-right[
+![](images/detailed_sampling_maps_no_livestock.png)
+]
+
+---
+
+class: center, middle
+
+# Thank you!
+
+Slides can be viewed at https://ecohealthalliance.github.io/population-sampling or PDF version downloaded at https://ecohealthalliance.github.io/population-sampling/population-sampling.pdf
+
+R scripts for slides available at https://github.com/ecohealthalliance/population-sampling
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
